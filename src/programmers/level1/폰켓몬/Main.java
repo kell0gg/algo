@@ -1,8 +1,8 @@
-package programmers.level1;
+package programmers.level1.폰켓몬;
 
 import java.util.Arrays;
 
-public class 폰켓몬 {
+public class Main {
 	public static void main(String[] args) {
 		Solution solution = new Solution();
 		solution.solution(new int[] {});
