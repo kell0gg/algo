@@ -1,4 +1,4 @@
-package programmers.level.음양_더하기;
+package programmers.level1.음양_더하기;
 
 public class Main {
 	public static void main(String[] args) {

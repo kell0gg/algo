@@ -1,4 +1,4 @@
-package programmers.level.소수_만들기;
+package programmers.level1.소수_만들기;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
