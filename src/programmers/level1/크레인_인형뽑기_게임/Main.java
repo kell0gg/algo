@@ -5,9 +5,11 @@ public class Main {
 		System.out.println("");
 	}
 }
+
 class Solution {
-    public int solution(int[][] board, int[] moves) {
-        int answer = 0;
-        return answer;
-    }
+	public int solution(int[][] board, int[] moves) {
+		int answer = 0;
+		
+		return answer;
+	}
 }

@@ -1,4 +1,4 @@
-package programmers.level.내적;
+package programmers.level1.내적;
 
 public class Main {
 	public static void main(String[] args) {
