@@ -31,7 +31,7 @@ class Solution {
 						continue;
 					}
 				}
-				if (right <n) {
+				if (right < n) {
 					if (total[right] > 0) {
 						total[i]++;
 						total[right]--;
