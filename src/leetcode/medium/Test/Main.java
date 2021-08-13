@@ -1,47 +1,38 @@
 package leetcode.medium.Test;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
 	public static void main(String[] args) {
-
+		System.out.println(Integer.MAX_VALUE);
 	}
 }
 
 class Solution {
-	public List<List<Integer>> permute(int[] nums) {
-		List<List<Integer>> answer = new ArrayList<>();
-		Deque<Integer> dq = new ArrayDeque<>();
+	public int[] solution(int[][] v) {
+		int[] answer = new int[2];
 
-		List<Integer> candidates = new ArrayList<>();
-		for (int i = 0; i < nums.length; i++) {
-			candidates.add(nums[i]);
+		Map<Integer, Integer> mapRow = new HashMap<>();
+		Map<Integer, Integer> mapCol = new HashMap<>(); 
+
+		for (int i = 0; i < 3; i++) {
+			mapRow.put(v[i][0], mapRow.getOrDefault((v[i][0]), 0) + 1);
+			mapCol.put(v[i][1], mapCol.getOrDefault((v[i][1]), 0) + 1);
 		}
 
-		permutation(candidates, dq, answer);
+		for (Map.Entry<Integer, Integer> m : mapRow.entrySet()) {
+			if (m.getValue() == 1) {
+				answer[0] = m.getKey();
+			}
+		}
+
+		for (Map.Entry<Integer, Integer> m : mapCol.entrySet()) {
+			if (m.getValue() == 1) {
+				answer[1] = m.getKey();
+			}
+		}
 
 		return answer;
-	}
-
-	private void permutation(List<Integer> candidates, Deque<Integer> dq, List<List<Integer>> answer) {
-		if (candidates.size() == 0) {
-			List<Integer> tmp = new ArrayList<>();
-			dq.forEach(v -> {
-				tmp.add(v);
-			});
-
-			answer.add(tmp);
-			return;
-		}
-
-		for (int i = 0; i < candidates.size(); i++) {
-			dq.addLast(candidates.remove(i));
-			permutation(candidates, dq, answer);
-			candidates.add(i, dq.pollLast());
-		}
-
 	}
 }
