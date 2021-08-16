@@ -65,6 +65,7 @@ class Solution {
 			for (int j = 0; j < C; j++) {
 				System.out.printf("%5d ", maps[i][j]);
 			}
+			sdfds
 			System.out.println();
 		}
 	}
