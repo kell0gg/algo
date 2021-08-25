@@ -65,13 +65,12 @@ class Solution {
 			for (int j = 0; j < C; j++) {
 				System.out.printf("%5d ", maps[i][j]);
 			}
-			sdfds
 			System.out.println();
 		}
 	}
 
 	private int[][] makeMap(int[][] maps) {
-		int[][] distMap = new int[R][C];
+		int[][] distMap  = new int[R][C];
 		for (int i = 0; i < R; i++) {
 			for (int j = 0; j < C; j++) {
 				distMap[i][j] = Integer.MAX_VALUE;

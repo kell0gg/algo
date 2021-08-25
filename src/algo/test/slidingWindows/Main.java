@@ -1,6 +1,7 @@
 package algo.test.slidingWindows;
 
 // https://www.geeksforgeeks.org/sliding-window-maximum-set-2/
+// https://leetcode.com/problems/sliding-window-maximum/discuss/458121/Java-All-Solutions-(B-F-PQ-Deque-DP)-with-Explanation-and-Complexity-Analysis
 
 public class Main {
 	public static void main(String[] args) {
@@ -92,7 +93,8 @@ class Solution {
 		// ..
 		// max(left[8], right(6])
 		for (int i = 0, j = k - 1; j < n; i++, j++) {
-			System.out.print(Math.max(left[j], right[i]) + " ");
+			System.out.printf("left %d, right %d\n", j, i);
+			// System.out.print(Math.max(left[j], right[i]) + " ");
 		}
 
 	}
