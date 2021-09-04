@@ -37,7 +37,6 @@ class Solution {
 		}
 
 		answer = LAST_TRUCK_INPUT_TIME + bridge_length;
-		System.out.println(answer);
 		return answer;
 	}
 
