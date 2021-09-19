@@ -1,7 +1,9 @@
 package leetcode.medium.Test;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
 
 public class Main {
 	public static void main(String[] args) {
@@ -10,29 +12,35 @@ public class Main {
 }
 
 class Solution {
-	public int[] solution(int[][] v) {
-		int[] answer = new int[2];
+	List<List<Integer>> ANSWER;
 
-		Map<Integer, Integer> mapRow = new HashMap<>();
-		Map<Integer, Integer> mapCol = new HashMap<>(); 
+	public List<List<Integer>> combine(int n, int k) {
+		ANSWER = new ArrayList<>();
+		Deque<Integer> q = new ArrayDeque<>();
+		List<Integer> candidate = new ArrayList<>();
 
-		for (int i = 0; i < 3; i++) {
-			mapRow.put(v[i][0], mapRow.getOrDefault((v[i][0]), 0) + 1);
-			mapCol.put(v[i][1], mapCol.getOrDefault((v[i][1]), 0) + 1);
+		for (int i = 1; i <= n; i++) {
+			candidate.add(i);
 		}
 
-		for (Map.Entry<Integer, Integer> m : mapRow.entrySet()) {
-			if (m.getValue() == 1) {
-				answer[0] = m.getKey();
-			}
+		dfs(q, 0, candidate, k);
+		return ANSWER;
+	}
+
+	private void dfs(Deque<Integer> q, int currentDepth, List<Integer> candidate, int k) {
+		if (q.size() == k) {
+			List<Integer> tmp = new ArrayList<>();
+			q.forEach(a -> {
+				tmp.add(a);
+			});
+			ANSWER.add(tmp);
+			return;
 		}
 
-		for (Map.Entry<Integer, Integer> m : mapCol.entrySet()) {
-			if (m.getValue() == 1) {
-				answer[1] = m.getKey();
-			}
+		for (int i = currentDepth; i < candidate.size(); i++) {
+			q.addLast(candidate.get(i));
+			dfs(q, i+1, candidate, k);
+			q.pollLast();
 		}
-
-		return answer;
 	}
 }
