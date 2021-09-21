@@ -1,8 +1,8 @@
-package leetcode.practice.easy;
+package leetcode.practice.easy.BaseballGame_682;
 
 import java.util.Stack;
 
-public class BaseballGame_682 {
+public class Main {
 	public static void main(String[] args) {
 		Solution solution = new Solution();
 		solution.calPoints(new String[] { "5", "-2", "4", "C", "D", "9", "+", "+" });
